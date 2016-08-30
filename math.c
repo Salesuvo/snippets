@@ -8,6 +8,22 @@
 #define CEILING_NUM(X, Y) ((((int)((X)%(Y))) == 0) ? (X) : ((((int)((X)/(Y))) * (Y)) + (Y)))
 #define FLOOR_NUM(X, Y) (((int)((X)/(Y))) * (Y))
 
+#define VARIABLE_UNUSED(name) (void)name
+#define SIZE_OF_ARRAY(array) (sizeof(array)/sizeof((array)[0]))
+#define IS_IN_RANGE(lower,n,upper) (((lower) <= (n)) && ((n) <= (upper)))
+
+inline bool isOdd(int n);
+inline bool isOdd(int n)
+{
+   return (n & 1) != 0;
+}
+
+inline bool isEven(int n);
+inline bool isEven(int n)
+{
+   return (n & 1) == 0;
+}
+
 A^B = Log-1(Log(A)*B)
 A^B = exp(b ln(a))
 
@@ -19,8 +35,5 @@ int const mask = v >> sizeof(int) * CHAR_BIT - 1;
 
 r = (v + mask) ^ mask;
 r = (v ^ mask) - mask;
-
-
-
 
 
