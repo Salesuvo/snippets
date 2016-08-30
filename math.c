@@ -8,8 +8,8 @@
 #define CEILING_NUM(X, Y) ((((int)((X)%(Y))) == 0) ? (X) : ((((int)((X)/(Y))) * (Y)) + (Y)))
 #define FLOOR_NUM(X, Y) (((int)((X)/(Y))) * (Y))
 
-AB = Log-1(Log(A)*B)
-AB = exp(b ln(a))
+A^B = Log-1(Log(A)*B)
+A^B = exp(b ln(a))
 
 abs:
 
