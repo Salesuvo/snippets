@@ -1,4 +1,7 @@
-// char to int
+/*
+ * char to int
+ */
+ 
 // value in ascii code
 char a = 'a';
 int ia = (int)a; 
