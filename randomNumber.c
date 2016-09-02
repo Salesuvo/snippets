@@ -14,6 +14,7 @@ myRandomNumber = 1 + (rand() % 10);
 unsigned int randr(unsigned int min, unsigned int max)
 {
     // from YON1: think about using srand() here
+    // e.g. srand(time(NULL))
 
     double scaled = rand() / (RAND_MAX + 1.0F);
     return (max - min + 1) * scaled + min;
