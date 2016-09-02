@@ -23,7 +23,7 @@ r = (v + mask) ^ mask;
 r = (v ^ mask) - mask;
 
 /**
- * 	Useful definitions using PI
+ *  Useful definitions using PI
  */
 
 #ifndef PI
@@ -38,3 +38,26 @@ r = (v ^ mask) - mask;
  */
 
 #define floatRound(n,e) (floor((n) * pow(10.F,(e))+0.5F) / pow(10.F,(e)))
+
+// vs.
+
+float roundIntWithPrecision(int i, unsigned int precision)
+{
+#ifdef __cplusplus
+   float multiplier = pow (10, static_cast<float>(precision));
+   return static_cast<int>(floorf(static_cast<float>(i) * multiplier + 0.5F) / multiplier);
+#else /* not __cplusplus */
+   float multiplier = pow (10, (float)precision);
+   return (int)(floorf((float)i * multiplier + 0.5F) / multiplier);
+#endif /* __cplusplus */
+}
+
+float roundFloatWithPrecision(float f, unsigned int precision)
+{
+#ifdef __cplusplus
+   float multiplier = pow (10, static_cast<float>(precision));
+#else /* not __cplusplus */
+   float multiplier = pow (10, (float)precision);
+#endif /* __cplusplus */
+   return floorf(f * multiplier + 0.5F) / multiplier;
+}
