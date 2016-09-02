@@ -11,3 +11,18 @@ int ia = (int)a;
 char a = '4';
 int ia = a - '0';
 /* check here if ia is bounded by 0 and 9 */
+
+
+/*
+ * int to bitstring
+ */
+ 
+void sprintb(char *s, unsigned n) 
+{
+    unsigned mask = ~(~0u >> 1);
+     while (mask) {
+        *s++ = n & mask ? '1' : '0';
+        mask >>= 1;
+    } 
+    *s = '\0'; 
+}
