@@ -1,0 +1,13 @@
+# aus ...
+# 0x00, 0x1F, ... 
+# 0x00, 0xC0, ...
+# wird ...
+# 0x0000, 0x1FC0
+
+BEGIN { FS = ","; OFS=","; }
+NF {
+for(i=1;i<=NF;i++) x[i]=$i;
+getline; $0=$0; gsub("[ \t]*0x","");
+for(i=1;i<=NF;i++) $i=x[i] $i
+print $0;
+}
