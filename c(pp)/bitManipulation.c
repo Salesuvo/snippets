@@ -13,3 +13,10 @@ bit = (number >> x) & 1;
 
 // Setting the nth bit to either 1 or 0 can be achieved with the following:
 number ^= (-x ^ number) & (1 << n);
+
+uint32_t NumberOfSetBits(uint32_t i)
+{
+     i = i - ((i >> 1) & 0x55555555);
+     i = (i & 0x33333333) + ((i >> 2) & 0x33333333);
+     return (((i + (i >> 4)) & 0x0F0F0F0F) * 0x01010101) >> 24;
+}
